@@ -1,0 +1,11 @@
+package VO;
+
+public class Tbl_inoutVO {
+	private String t_no;
+	private String p_code;
+	private String t_type;
+	private int t_cnt;
+	private String t_date;
+	private String c_code;
+	
+}

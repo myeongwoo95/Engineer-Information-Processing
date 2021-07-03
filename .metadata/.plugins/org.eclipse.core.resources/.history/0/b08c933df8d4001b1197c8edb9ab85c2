@@ -1,9 +1,0 @@
-package VO;
-
-public class Tbl_productVO {
-	private String p_code;
-	private String p_name;
-	private int p_size;
-	private int p_incost;
-	private int p_outcost;
-}

@@ -8,4 +8,5 @@
     <fullyQualifiedTypeName name="DAO.artistDAO"/>
     <fullyQualifiedTypeName name="DAO.HsManagermentDAO"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="DAO.SmartFactoryDAO"/>
 </qualifiedTypeNameHistroy>

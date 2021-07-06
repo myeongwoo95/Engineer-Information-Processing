@@ -24,7 +24,7 @@
 	
 	<section class="main-section insert-section">
 		<h1>작업공정등록</h1>
-		<form name="myForm" method="POST" action="insertworkprocesspro.do">
+		<form name="myForm" method="POST">
 			<table>
 				<tr>
 					<th>작업지시번호</th>
@@ -135,8 +135,8 @@
 			</table>
 			
 			<div class="btnlist">
-				<input type="button" onclick="check()" value="공정등록">
-				<input type="button" onclick="modify()" value="공정수정">
+				<input type="button" onclick="check('insert')" value="공정등록">
+				<input type="button" onclick="check('modify')" value="공정수정">
 				<input type="button" onclick="remove()" value="다시쓰기">
 			</div>
 			
@@ -145,7 +145,7 @@
 	<%@include file="footer.jsp"%>
 	
 	<script>
-		function check(){
+		function check(string){
 			if(myForm.w_workno.value==""){
 				alert("작업지시번호가 입력되지 않았습니다!");
 				myForm.w_workno.focus();
@@ -199,69 +199,18 @@
 				myForm.w_lasttime.focus();
 				return;
 			}	
-			alert("공정상태가 정상적으로 등록되었습니다.")
+			if(string=='insert'){
+				myForm.action="insertworkprocesspro.do";
+			}else{
+				myForm.action="modifypro.do"
+			}
+			
 			myForm.submit();
-		}
-		
-		function modify(){
-			if(myForm.w_workno.value==""){
-				alert("작업지시번호가 입력되지 않았습니다!");
-				myForm.w_workno.focus();
-				return;
-			}
 			
-			if(myForm.p_p1.value==""){
-				alert("재료준비항목이 선택되지 않았습니다!");
-				myForm.p_p1.focus();
-				return;
-			}
-			
-			if(myForm.p_p2.value==""){
-				alert("인쇄공정 항목이 선택되지 않았습니다!");
-				myForm.p_p2.focus();
-				return;
-			}
-			
-			if(myForm.p_p3.value==""){
-				alert("코팅공정 항목이 선택되지 않았습니다!");
-				myForm.p_p3.focus();
-				return;
-			}
-			
-			if(myForm.p_p4.value==""){
-				alert(" 합지공정 항목이 선택되지 않았습니다!");
-				myForm.p_p4.focus();
-				return;
-			}
-			
-			if(myForm.p_p5.value==""){
-				alert("접합공정 항목이 선택되지 않았습니다!");
-				myForm.p_p5.focus();
-				return;
-			}
-			
-			if(myForm.p_p6.value==""){
-				alert("포장적재 항목이 선택되지 않았습니다!");
-				myForm.p_p6.focus();
-				return;
-			}
-			
-			if(myForm.w_lastdate.value==""){
-				alert("최종작업일자가 입력되지 않았습니다!");
-				myForm.w_lastdate.focus();
-				return;
-			}
-			
-			if(myForm.w_lasttime.value==""){
-				alert("최종작업시간이 입력되지 않았습니다!");
-				myForm.w_lasttime.focus();
-				return;
-			}	
-			alert("공정상태가 정상적으로 등록되었습니다.")
-			myForm.submit();
 		}
 		
 		function remove(){
+			alert("정보를 지우고 처음부터 다시 입력합니다.")
 			myForm.w_workno.value=""
 			$("input:radio[name='p_p1']:radio").prop('checked', false);
 			$("input:radio[name='p_p2']:radio").prop('checked', false);

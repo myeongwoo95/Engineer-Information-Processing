@@ -117,6 +117,32 @@ public class SmartFactoryDAO {
 		}
 		
 	}
+
+//	public void modify(Tbl_processVO pvo2) {
+//		
+//		String sql = "update tbl_process_201909 (w_workno,p_p1, p_p2, p_p3, p_p4, p_p5, p_p6, w_lastdate, w_lasttime) "
+//				   + "values(?,?,?,?,?,?,?,?,?)";
+//		try {
+//			conn = dbm.getConnection();
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setString(1, vo.getW_workno());
+//			pstmt.setString(2, vo.getP_p1());
+//			pstmt.setString(3, vo.getP_p2());
+//			pstmt.setString(4, vo.getP_p3());
+//			pstmt.setString(5, vo.getP_p4());
+//			pstmt.setString(6, vo.getP_p5());
+//			pstmt.setString(7, vo.getP_p6());
+//			pstmt.setString(8, vo.getW_lastdate());
+//			pstmt.setString(9, vo.getW_lasttime());
+//			
+//			pstmt.executeUpdate();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			dbm.close(conn, pstmt);
+//		}
+//		
+//	}
 	
 	
 }

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DAO.SmartFactoryDAO;
+import VO.Tbl_processVO;
 import VO.Tbl_productVO;
 import VO.Tbl_viewworkVO;
 
@@ -72,6 +73,20 @@ public class Controller extends HttpServlet {
 			
 		case "/insertworkprocesspro.do":
 			request.setCharacterEncoding("utf-8");
+			
+			Tbl_processVO pvo = new Tbl_processVO();
+			
+			pvo.setW_workno(request.getParameter("w_workno"));
+			pvo.setP_p1(request.getParameter("p_p1"));
+			pvo.setP_p2(request.getParameter("p_p2"));
+			pvo.setP_p3(request.getParameter("p_p3"));
+			pvo.setP_p4(request.getParameter("p_p4"));
+			pvo.setP_p5(request.getParameter("p_p5"));
+			pvo.setP_p6(request.getParameter("p_p6"));
+			pvo.setW_lastdate(request.getParameter("w_lastdate"));
+			pvo.setW_lasttime(request.getParameter("w_lasttime"));
+			
+			sfdao.insert(pvo);
 			
 			response.sendRedirect("index.do");
 			break;

@@ -32,13 +32,14 @@
 			
 			<c:forEach var="list" items="${list}">
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<c:set var="TextValue" value="${list.w_workno}"/>
+				<td>${fn:substring(TextValue,0,4)}-${fn:substring(TextValue,4,8)}</td>
+				<td>${list.p_code }</td>
+				<td>${list.p_name }</td>
+				<td>${list.p_size }</td>
+				<td>${list.p_type }</td>
+				<td>${list.w_quentity }</td>
+				<td>${list.w_workdate }</td>
 			</tr>
 			</c:forEach>
 			

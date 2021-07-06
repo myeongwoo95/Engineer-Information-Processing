@@ -35,7 +35,7 @@
 				<td>${list.p_name }</td>
 				<td>${list.p_size }</td>
 				<td>${list.p_type }</td>
-				<td>&#92;${list.p_price }</td>
+				<td>&#92;<fmt:formatNumber value="${list.p_price }" pattern="#,###" /></td>
 			</tr>
 			</c:forEach>
 			

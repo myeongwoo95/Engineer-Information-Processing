@@ -91,6 +91,26 @@ public class Controller extends HttpServlet {
 			response.sendRedirect("index.do");
 			break;
 			
+		case "/modifypro.do":
+			request.setCharacterEncoding("utf-8");
+			
+			Tbl_processVO pvo2 = new Tbl_processVO();
+			
+			pvo2.setW_workno(request.getParameter("w_workno"));
+			pvo2.setP_p1(request.getParameter("p_p1"));
+			pvo2.setP_p2(request.getParameter("p_p2"));
+			pvo2.setP_p3(request.getParameter("p_p3"));
+			pvo2.setP_p4(request.getParameter("p_p4"));
+			pvo2.setP_p5(request.getParameter("p_p5"));
+			pvo2.setP_p6(request.getParameter("p_p6"));
+			pvo2.setW_lastdate(request.getParameter("w_lastdate"));
+			pvo2.setW_lasttime(request.getParameter("w_lasttime"));
+			
+			sfdao.modify(pvo2);
+			
+			response.sendRedirect("index.do");
+			break;
+			
 		case "/viewworkprocess.do":
 			request.setCharacterEncoding("utf-8");
 			
